@@ -19,6 +19,9 @@ namespace UnlimMTS
       CheckAndSetTTL();
     }
 
+    /// <summary>
+    /// Метод проверки/инициализации ключей TTL
+    /// </summary>
     private void CheckAndSetTTL()
     {
 
@@ -46,6 +49,11 @@ namespace UnlimMTS
       CurrentTTLValue.Text = resip;
     }
 
+    /// <summary>
+    /// Метод установки измененных ключей
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void SetTTL_OnClick(object sender, RoutedEventArgs e)
     {
       RegistryKey tcpip = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters", true);
@@ -64,6 +72,11 @@ namespace UnlimMTS
         CurrentTTLValue.Text = "TTL set ERROR";
     }
 
+    /// <summary>
+    /// Метод сброса TTL до стандартного значения Windows
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void ResetTTL_OnClickTTL_OnClick(object sender, RoutedEventArgs e)
     {
       RegistryKey tcpip = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters", true);
